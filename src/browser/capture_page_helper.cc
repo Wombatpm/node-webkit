@@ -35,7 +35,7 @@
 #include "skia/ext/platform_canvas.h"
 #include "ui/gfx/codec/jpeg_codec.h"
 #include "ui/gfx/codec/png_codec.h"
-#include "ui/gfx/rect.h"
+#include "ui/gfx/geometry/rect.h"
 
 namespace nw {
 
@@ -88,13 +88,11 @@ void CapturePageHelper::StartCapturePage(const std::string& image_format_str) {
       gfx::Rect(),
       view->GetViewBounds().size(),
       base::Bind(&CapturePageHelper::CopyFromBackingStoreComplete,
-                 this));
+                 this), kN32_SkColorType);
 }
 
-void CapturePageHelper::CopyFromBackingStoreComplete(
-                                                     bool succeeded,
-                                                     const SkBitmap& bitmap) {
-  if (succeeded) {
+void CapturePageHelper::CopyFromBackingStoreComplete(const SkBitmap& bitmap, content::ReadbackResponse response) {
+  if (response == content::READBACK_SUCCESS) {
     // Get image from backing store.
     SendResultFromBitmap(bitmap);
     return;
