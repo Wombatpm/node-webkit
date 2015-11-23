@@ -26,10 +26,10 @@ function App() {
 require('util').inherits(App, exports.Base);
 
 App.filteredArgv = [
-  /--no-toolbar/,
-  /--url=.*/,
-  /--remote-debugging-port=.*/,
-  /--renderer-cmd-prefix.*/,
+  /^--no-toolbar$/,
+  /^--url=/,
+  /^--remote-debugging-port=/,
+  /^--renderer-cmd-prefix/,
 ];
 
 App.prototype.quit = function() {
@@ -69,8 +69,8 @@ App.prototype.getProxyForURL = function (url) {
   return nw.callStaticMethodSync('App', 'getProxyForURL', [ url ]);
 }
 
-App.prototype.setProxyConfig = function (proxy_config) {
-  return nw.callStaticMethodSync('App', 'SetProxyConfig', [ proxy_config ]);
+App.prototype.setProxyConfig = function (proxy_config, pac_url) {
+  return nw.callStaticMethodSync('App', 'SetProxyConfig', [ proxy_config, pac_url ]);
 }
 
 App.prototype.addOriginAccessWhitelistEntry = function(sourceOrigin, destinationProtocol, destinationHost, allowDestinationSubdomains) {

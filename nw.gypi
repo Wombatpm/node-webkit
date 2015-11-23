@@ -207,6 +207,8 @@
         'src/api/event/event.cc',
         'src/api/screen/desktop_capture_api.h',
         'src/api/screen/desktop_capture_api.cc',
+        'src/api/screen/desktop_capture_monitor.cc',
+        'src/api/screen/desktop_capture_monitor.h',
         '<(DEPTH)/chrome/browser/media/desktop_media_list.h',
         '<(DEPTH)/chrome/browser/media/desktop_media_list_observer.h',
         '<(DEPTH)/chrome/browser/media/desktop_media_picker.h',
@@ -912,6 +914,15 @@
     {
       'target_name': 'dist',
       'type': 'none',
+      'variables': {
+        'conditions': [
+          ['nwjs_mas==1', {
+            'package_mode': 'mas',
+          }, {
+            'package_mode': 'regular',
+          }],
+        ],  # conditions
+      },  # variables
       'actions': [
         {
           'action_name': 'package_nw_binaries',
@@ -924,7 +935,7 @@
           'outputs':[
             '<(PRODUCT_DIR)/new_package.re',
           ],
-          'action': ['python', '<(package_script)', '-p', '<(PRODUCT_DIR)', '-a', '<(target_arch)'],
+          'action': ['python', '<(package_script)', '-p', '<(PRODUCT_DIR)', '-a', '<(target_arch)', '-m', '<(package_mode)'],
         },
       ],
       'dependencies': [

@@ -26,10 +26,16 @@ It was created in the Intel Open Source Technology Center.
 * Available on Linux, Mac OS X and Windows
 
 ## Downloads
-* **v0.12.0:** (Mar 5, 2015, based off of IO.js v1.2.0, Chromium 41.0.2272.76): [release notes](https://groups.google.com/d/msg/nwjs-general/NJA-Up4MFug/1jmBPjzklSUJ)  
- * Linux: [32bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-linux-ia32.tar.gz) / [64bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-linux-x64.tar.gz)
- * Windows: [32bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-win-ia32.zip) / [64bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-win-x64.zip)
- * Mac 10.7+: [32bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-osx-ia32.zip) / [64bit](http://dl.nwjs.io/v0.12.0/nwjs-v0.12.0-osx-x64.zip)
+* **v0.12.3:** (Jul 31, 2015, based off of IO.js v1.2.0, Chromium 41.0.2272.76): [release notes](https://groups.google.com/d/msg/nwjs-general/hhXCS4aXGV0/TUQmcu5XDwAJ)  
+ * Linux: [32bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-ia32.tar.gz) / [64bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz)
+ * Windows: [32bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-ia32.zip) / [64bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-x64.zip)
+ * Mac 10.7+: [32bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-osx-ia32.zip) / [64bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-osx-x64.zip)
+
+* **v0.13.0-alpha1:** (Jun 11, 2015, based off of IO.js v1.5.1, Chromium 43.0.2357.45): [release notes](https://groups.google.com/d/msg/nwjs-general/c25l_jGMqj8/rsAtdSQuxeUJ)  
+ **NOTE** You might want the **SDK build**. Please read the release notes  
+ * Linux: [32bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-linux-ia32.tar.gz) / [64bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-linux-x64.tar.gz)
+ * Windows: [32bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-win-ia32.zip) / [64bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-win-x64.zip)
+ * Mac 10.7+: [32bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-osx-ia32.zip) / [64bit](http://dl.nwjs.io/v0.13.0/alpha1/nwjs-v0.13.0-alpha1-osx-x64.zip)
 
 * **0.8.6:** (Apr 18, 2014, based off of Node v0.10.22, Chrome 30.0.1599.66) **If your native Node module works only with Node v0.10, then you should use node-webkit v0.8.x, which is also a maintained branch. [More info](https://groups.google.com/d/msg/nwjs-general/2OJ1cEMPLlA/09BvpTagSA0J)**  
 [release notes](https://groups.google.com/d/msg/nwjs-general/CLPkgfV-i7s/hwkkQuJ1kngJ)
@@ -38,7 +44,7 @@ It was created in the Intel Open Source Technology Center.
  * Windows: [win32](http://dl.node-webkit.org/v0.8.6/node-webkit-v0.8.6-win-ia32.zip)
  * Mac: [32bit, 10.7+](http://dl.node-webkit.org/v0.8.6/node-webkit-v0.8.6-osx-ia32.zip)
 
-* **latest live build**: git tip version; build triggered from every git commit: http://dl.node-webkit.org/live-build/
+* **latest live build**: git tip version; build triggered from every git commit: http://dl.nwjs.io/live-build/
 
 * [Previous versions](https://github.com/rogerwang/node-webkit/wiki/Downloads-of-old-versions)
 
@@ -67,6 +73,7 @@ Create `package.json`:
 ```json
 {
   "name": "nw-demo",
+  "version": "0.0.1",
   "main": "index.html"
 }
 ```
@@ -78,10 +85,9 @@ $ /path/to/nw .  (suppose the current directory contains 'package.json')
 
 Note: on Windows, you can drag the folder containing `package.json` to `nw.exe` to open it.
 
-Note: on OSX, the executable binary is in a hidden directory within the .app file. To run node-webkit on OSX, type:
-```bash
-$ /path/to/node-webkit.app/Contents/MacOS/node-webkit .  (suppose the current directory contains 'package.json')
-```
+Note: on OSX, the executable binary is in a hidden directory within the .app file. To run node-webkit on OSX, type:  
+`/path/to/nwjs.app/Contents/MacOS/nwjs .` *(suppose the current directory contains 'package.json')*   
+
 ## Documents
 
 For more information on how to write/package/run apps, see:
